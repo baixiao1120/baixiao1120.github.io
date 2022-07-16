@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-16T10:18:13.509Z</updated>
+  <updated>2022-07-16T10:31:34.249Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,21 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>PowerShell 因为在此系统上禁止运行脚本 解决办法</title>
-    <link href="http://example.com/2022/07/16/PowerShell-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>http://example.com/2022/07/16/PowerShell-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
-    <published>2022-07-16T09:36:47.000Z</published>
-    <updated>2022-07-16T10:18:13.509Z</updated>
+    <title>hexo 上传博客常用的几个命令(备忘)</title>
+    <link href="http://example.com/2022/07/16/hexo-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4-%E5%A4%87%E5%BF%98/"/>
+    <id>http://example.com/2022/07/16/hexo-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4-%E5%A4%87%E5%BF%98/</id>
+    <published>2022-07-16T10:28:10.000Z</published>
+    <updated>2022-07-16T10:31:34.249Z</updated>
     
-    <content type="html"><![CDATA[<p>计算机上启动的PowerShell 默认设置的执行策略为：Restricted</p><p>需要修改为 RemoteSigned 方可执行脚本</p><p>查看计算机的执行策略，在PowerShell中输入以下内容：</p><p><code>get-executionpolicy</code></p><p>本机由于已经修改过了，所以显示的内容是 RemoteSigned</p><p><img src="/../img/%E4%BF%AE%E6%94%B9%E7%AD%96%E7%95%A5.png"></p><p>修改策略：</p><p><code>set-executionpolicy remotesigned</code></p><p><code>Set-ExecutionPolicy -Scope CurrentUser</code></p><p><img src="/../img/%E4%BF%AE%E6%94%B9%E7%AD%96%E7%95%A52.png" alt="img.png"></p><p>然后填入 RemoteSigned 就修改完成了~</p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#新建文章</span><br><span class="line">hexo new &quot;blog_name&quot; </span><br><span class="line">hexo n &quot;&quot;</span><br><span class="line"></span><br><span class="line">#新建页面</span><br><span class="line">hexo new page &quot;blog_name&quot;</span><br><span class="line"></span><br><span class="line">#生成静态页面至public目录</span><br><span class="line">hexo generate </span><br><span class="line">hexo g </span><br><span class="line"></span><br><span class="line">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span><br><span class="line">hexo server </span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line">#部署到GitHub</span><br><span class="line">hexo deploy </span><br><span class="line">hexo d </span><br><span class="line"></span><br><span class="line"># 查看帮助</span><br><span class="line">hexo help</span><br><span class="line">hexo h </span><br><span class="line"></span><br><span class="line">#查看Hexo的版本</span><br><span class="line">hexo version</span><br><span class="line">hexo v  </span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;计算机上启动的PowerShell 默认设置的执行策略为：Restricted&lt;/p&gt;
-&lt;p&gt;需要修改为 RemoteSigned 方可执行脚本&lt;/p&gt;
-&lt;p&gt;查看计算机的执行策略，在PowerShell中输入以下内容：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;get-execution</summary>
+    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span c</summary>
       
     
     
@@ -40,11 +37,33 @@
   </entry>
   
   <entry>
-    <title>博客搭建过程</title>
+    <title>PowerShell 因为在此系统上禁止运行脚本 解决办法</title>
+    <link href="http://example.com/2022/07/16/PowerShell-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://example.com/2022/07/16/PowerShell-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <published>2022-07-16T09:36:47.000Z</published>
+    <updated>2022-07-16T10:26:10.355Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 WIN+R 打开 PowerShell （这样的打开方式是以管理员身份来打开的）</p><p>计算机上启动的 <strong>PowerShell</strong> 默认设置的执行策略为：Restricted</p><p>需要修改为 RemoteSigned 方可执行脚本</p><p>查看计算机的执行策略，在PowerShell中输入以下内容：</p><p><code>get-executionpolicy</code></p><p>本机由于已经修改过了，所以显示的内容是 RemoteSigned</p><p><img src="/../img/%E4%BF%AE%E6%94%B9%E7%AD%96%E7%95%A5.png"></p><p>修改策略：</p><p><code>set-executionpolicy remotesigned</code></p><p><code>Set-ExecutionPolicy -Scope CurrentUser</code></p><p><img src="/../img/%E4%BF%AE%E6%94%B9%E7%AD%96%E7%95%A52.png" alt="img.png"></p><p>然后填入 RemoteSigned 就修改完成了~</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;使用 WIN+R 打开 PowerShell （这样的打开方式是以管理员身份来打开的）&lt;/p&gt;
+&lt;p&gt;计算机上启动的 &lt;strong&gt;PowerShell&lt;/strong&gt; 默认设置的执行策略为：Restricted&lt;/p&gt;
+&lt;p&gt;需要修改为 RemoteSigned 方可</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>博客搭建 过程记录</title>
     <link href="http://example.com/2022/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/"/>
     <id>http://example.com/2022/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</id>
     <published>2022-07-16T01:51:43.000Z</published>
-    <updated>2022-07-16T10:05:01.996Z</updated>
+    <updated>2022-07-16T10:23:01.035Z</updated>
     
     <content type="html"><![CDATA[<h2 id="坑点："><a href="#坑点：" class="headerlink" title="坑点："></a>坑点：</h2><h4 id="1-Github-仓库创建完毕后，访问页面失败，需要使用科学上网工具访问。"><a href="#1-Github-仓库创建完毕后，访问页面失败，需要使用科学上网工具访问。" class="headerlink" title="1.Github 仓库创建完毕后，访问页面失败，需要使用科学上网工具访问。"></a>1.Github 仓库创建完毕后，访问页面失败，需要使用<del>科学上网</del>工具访问。</h4><p>PS：<strong>也可尝试多次刷新页面，切换网络来访问页面</strong></p><p><img src="/../img/github%E8%AE%BF%E9%97%AE%E5%8D%9A%E5%AE%A2%E5%A4%B1%E8%B4%A5.png"></p><h4 id="2-创建Git仓库的时候，建议使用小写的用户名，否则会影响网站的访问"><a href="#2-创建Git仓库的时候，建议使用小写的用户名，否则会影响网站的访问" class="headerlink" title="2.创建Git仓库的时候，建议使用小写的用户名，否则会影响网站的访问"></a>2.创建Git仓库的时候，建议使用小写的用户名，否则会影响网站的访问</h4><p>错误示范</p><p><code>GreedDeer.github.io</code></p><h4 id="3-修改Github用户名"><a href="#3-修改Github用户名" class="headerlink" title="3.修改Github用户名"></a>3.修改Github用户名</h4><p>如图所示：登录github后，点击个人头像即可修改</p><p><img src="/../img/%E4%BF%AE%E6%94%B9github%E7%94%A8%E6%88%B7%E5%90%8D1.png"><br><img src="/../img/%E4%BF%AE%E6%94%B9github%E7%94%A8%E6%88%B7%E5%90%8D2.png"></p><hr><p>参考教程：</p><p><a href="https://www.cnblogs.com/chenlove/p/15058170.html">【保姆级】利用Github搭建自己的个人博客，看完就会</a>。</p><p><a href="https://blog.csdn.net/weixin_29092579/article/details/112100678">Hexo搭建个人博客-并部署到Github上托管(Windows)</a>。</p><hr>]]></content>
     
@@ -60,18 +79,18 @@
   </entry>
   
   <entry>
-    <title>Greed-deer的第一篇博客</title>
+    <title>Greed_deer的第一篇博客</title>
     <link href="http://example.com/2022/07/16/Greed-deer%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://example.com/2022/07/16/Greed-deer%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2022-07-16T01:30:18.000Z</published>
-    <updated>2022-07-16T10:14:18.371Z</updated>
+    <updated>2022-07-16T10:24:54.442Z</updated>
     
-    <content type="html"><![CDATA[<p>一个普通的程序员而已</p><p>记录一下日常的学习生活</p><p>那么就开始吧~</p><p><img src="/../img/%E7%94%98%E9%9B%A81.png"></p>]]></content>
+    <content type="html"><![CDATA[<p>这里只是一个普通的程序员而已</p><p>记录一下日常的学习生活</p><p>那么就开始吧~</p><p><img src="/../img/%E7%94%98%E9%9B%A81.png"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;一个普通的程序员而已&lt;/p&gt;
+    <summary type="html">&lt;p&gt;这里只是一个普通的程序员而已&lt;/p&gt;
 &lt;p&gt;记录一下日常的学习生活&lt;/p&gt;
 &lt;p&gt;那么就开始吧~&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/../img/%E7%94%98%E9%9B%A81.png&quot;&gt;&lt;/p&gt;
