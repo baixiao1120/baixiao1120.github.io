@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-16T10:52:52.511Z</updated>
+  <updated>2022-07-28T13:41:43.132Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Sql的方式，操作Excel(Python)</title>
+    <link href="http://example.com/2022/07/17/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/"/>
+    <id>http://example.com/2022/07/17/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/</id>
+    <published>2022-07-17T04:58:56.000Z</published>
+    <updated>2022-07-28T13:41:43.132Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、前言："><a href="#一、前言：" class="headerlink" title="一、前言："></a>一、前言：</h1><p>在我们的认知里，Sql通常是用来操作数据库内容的。在此之前，我也是这么认为的，但是经过一位朋友的介绍，发现Sql还能对Excel进行操作。特此记录一下操作的方式</p><h1 id="二、配置环境："><a href="#二、配置环境：" class="headerlink" title="二、配置环境："></a>二、配置环境：</h1><h2 id="1-Python"><a href="#1-Python" class="headerlink" title="1. Python"></a>1. Python</h2><p>需要安装pywin32的包</p><h2 id="2-Microsoft-Access-2010-数据库引擎可再发行程序包"><a href="#2-Microsoft-Access-2010-数据库引擎可再发行程序包" class="headerlink" title="2. Microsoft Access 2010 数据库引擎可再发行程序包"></a>2. Microsoft Access 2010 数据库引擎可再发行程序包</h2><p><a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=13255">下载地址</a></p><p><strong>注意事项</strong>：安装的版本需要与Python环境的位数一致</p><p>例如：Python环境使用的64位的，Access 也需要使用64位的</p><h1 id="三、待查询Excel预览图"><a href="#三、待查询Excel预览图" class="headerlink" title="三、待查询Excel预览图"></a>三、待查询Excel预览图</h1><p><img src="/../img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/Excel%E9%A2%84%E8%A7%88%E5%9B%BE.png"></p><h1 id="四、执行代码："><a href="#四、执行代码：" class="headerlink" title="四、执行代码："></a>四、执行代码：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 连接数据库对象</span><br><span class="line">conn = win32com.client.Dispatch(r&#x27;ADODB.Connection&#x27;)</span><br><span class="line"># 添加连接信息</span><br><span class="line">conn.Open(f&quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&#x27;E:\\测试资源\\test.xlsx&#x27;;&quot; \</span><br><span class="line">          f&quot;Extended Properties=&#x27;Excel 12.0 Xml;hdr=yes;imex=1&#x27;&quot;)</span><br><span class="line"># 创建一个查询数据库的对象</span><br><span class="line">cmd = win32com.client.Dispatch(&#x27;ADODB.Command&#x27;)</span><br><span class="line">cmd.acTiveConnection = conn</span><br><span class="line"># sql语句</span><br><span class="line">cmd.CommandText = &#x27;select * from [Sheet1$]&#x27;</span><br><span class="line"># 查询</span><br><span class="line">(rs, dummy) = cmd.Execute()</span><br><span class="line"># 获取信息</span><br><span class="line">query_result = rs.GetRows()</span><br><span class="line">result = zip(*query_result)</span><br><span class="line">for a in list(map(lambda v: list(v), result)):</span><br><span class="line">    print(a)</span><br></pre></td></tr></table></figure><h1 id="五、执行结果"><a href="#五、执行结果" class="headerlink" title="五、执行结果"></a>五、执行结果</h1><p><img src="/../img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一、前言：&quot;&gt;&lt;a href=&quot;#一、前言：&quot; class=&quot;headerlink&quot; title=&quot;一、前言：&quot;&gt;&lt;/a&gt;一、前言：&lt;/h1&gt;&lt;p&gt;在我们的认知里，Sql通常是用来操作数据库内容的。在此之前，我也是这么认为的，但是经过一位朋友的介绍，发现Sql还能</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>win11 修改右键菜单</title>

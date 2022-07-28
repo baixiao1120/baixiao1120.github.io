@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   
   
-  <title>hexo 上传博客常用的几个命令(备忘) | Greed Deer Blog</title>
+  <title>使用Sql的方式，操作Excel(Python) | Greed Deer Blog</title>
   <meta name="author" content="Greed deer" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -16,17 +16,20 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="本Blog使用hexo的技术，所以需要记录一下常用的几个指令记性不好，更要写下来 1234567891011121314151617181920212223242526#新建文章hexo new &quot;blog_name&quot; hexo n &quot;&quot;#新建页面hexo new page &quot;blog_name&quot;#生成静态页面至public目录hexo">
+  <meta name="description" content="一、前言：在我们的认知里，Sql通常是用来操作数据库内容的。在此之前，我也是这么认为的，但是经过一位朋友的介绍，发现Sql还能对Excel进行操作。特此记录一下操作的方式 二、配置环境：1. Python需要安装pywin32的包 2. Microsoft Access 2010 数据库引擎可再发行程序包下载地址 注意事项：安装的版本需要与Python环境的位数一致 例如：Python环境使用的6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 上传博客常用的几个命令(备忘)">
-<meta property="og:url" content="http://example.com/2022/07/16/hexo-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4-%E5%A4%87%E5%BF%98/index.html">
+<meta property="og:title" content="使用Sql的方式，操作Excel(Python)">
+<meta property="og:url" content="http://example.com/2022/07/17/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/index.html">
 <meta property="og:site_name" content="Greed Deer Blog">
-<meta property="og:description" content="本Blog使用hexo的技术，所以需要记录一下常用的几个指令记性不好，更要写下来 1234567891011121314151617181920212223242526#新建文章hexo new &quot;blog_name&quot; hexo n &quot;&quot;#新建页面hexo new page &quot;blog_name&quot;#生成静态页面至public目录hexo">
+<meta property="og:description" content="一、前言：在我们的认知里，Sql通常是用来操作数据库内容的。在此之前，我也是这么认为的，但是经过一位朋友的介绍，发现Sql还能对Excel进行操作。特此记录一下操作的方式 二、配置环境：1. Python需要安装pywin32的包 2. Microsoft Access 2010 数据库引擎可再发行程序包下载地址 注意事项：安装的版本需要与Python环境的位数一致 例如：Python环境使用的6">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-16T10:28:10.000Z">
-<meta property="article:modified_time" content="2022-07-16T10:43:48.299Z">
+<meta property="og:image" content="http://example.com/img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/Excel%E9%A2%84%E8%A7%88%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta property="article:published_time" content="2022-07-17T04:58:56.000Z">
+<meta property="article:modified_time" content="2022-07-28T13:41:43.132Z">
 <meta property="article:author" content="Greed deer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/Excel%E9%A2%84%E8%A7%88%E5%9B%BE.png">
   
   <!-- 站点验证相关 -->
   
@@ -140,15 +143,15 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/16/hexo-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4-%E5%A4%87%E5%BF%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/17/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">hexo 上传博客常用的几个命令(备忘)</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">使用Sql的方式，操作Excel(Python)</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2022-07-16T10:28:10.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-16</time></li>
+                <li><time datetime="2022-07-17T04:58:56.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-17</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">Greed deer</span>
                 </li>
@@ -156,7 +159,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        363
+                        849
                     
                     字
                 </li>
@@ -167,13 +170,20 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1657968228299"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1659015703132"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             <hr />
-            <div itemprop="articleBody"><p>本Blog使用hexo的技术，所以需要记录一下常用的几个指令<br>记性不好，更要写下来</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#新建文章</span><br><span class="line">hexo new &quot;blog_name&quot; </span><br><span class="line">hexo n &quot;&quot;</span><br><span class="line"></span><br><span class="line">#新建页面</span><br><span class="line">hexo new page &quot;blog_name&quot;</span><br><span class="line"></span><br><span class="line">#生成静态页面至public目录</span><br><span class="line">hexo generate </span><br><span class="line">hexo g </span><br><span class="line"></span><br><span class="line">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span><br><span class="line">hexo server </span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line">#部署到GitHub</span><br><span class="line">hexo deploy </span><br><span class="line">hexo d </span><br><span class="line"></span><br><span class="line"># 查看帮助</span><br><span class="line">hexo help</span><br><span class="line">hexo h </span><br><span class="line"></span><br><span class="line">#查看Hexo的版本</span><br><span class="line">hexo version</span><br><span class="line">hexo v  </span><br></pre></td></tr></table></figure></div>
+            <div itemprop="articleBody"><h1 id="一、前言："><a href="#一、前言：" class="headerlink" title="一、前言："></a>一、前言：</h1><p>在我们的认知里，Sql通常是用来操作数据库内容的。在此之前，我也是这么认为的，但是经过一位朋友的介绍，发现Sql还能对Excel进行操作。特此记录一下操作的方式</p>
+<h1 id="二、配置环境："><a href="#二、配置环境：" class="headerlink" title="二、配置环境："></a>二、配置环境：</h1><h2 id="1-Python"><a href="#1-Python" class="headerlink" title="1. Python"></a>1. Python</h2><p>需要安装pywin32的包</p>
+<h2 id="2-Microsoft-Access-2010-数据库引擎可再发行程序包"><a href="#2-Microsoft-Access-2010-数据库引擎可再发行程序包" class="headerlink" title="2. Microsoft Access 2010 数据库引擎可再发行程序包"></a>2. Microsoft Access 2010 数据库引擎可再发行程序包</h2><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/download/details.aspx?id=13255">下载地址</a></p>
+<p><strong>注意事项</strong>：安装的版本需要与Python环境的位数一致</p>
+<p>例如：Python环境使用的64位的，Access 也需要使用64位的</p>
+<h1 id="三、待查询Excel预览图"><a href="#三、待查询Excel预览图" class="headerlink" title="三、待查询Excel预览图"></a>三、待查询Excel预览图</h1><p><img src="/../img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/Excel%E9%A2%84%E8%A7%88%E5%9B%BE.png"></p>
+<h1 id="四、执行代码："><a href="#四、执行代码：" class="headerlink" title="四、执行代码："></a>四、执行代码：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 连接数据库对象</span><br><span class="line">conn = win32com.client.Dispatch(r&#x27;ADODB.Connection&#x27;)</span><br><span class="line"># 添加连接信息</span><br><span class="line">conn.Open(f&quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&#x27;E:\\测试资源\\test.xlsx&#x27;;&quot; \</span><br><span class="line">          f&quot;Extended Properties=&#x27;Excel 12.0 Xml;hdr=yes;imex=1&#x27;&quot;)</span><br><span class="line"># 创建一个查询数据库的对象</span><br><span class="line">cmd = win32com.client.Dispatch(&#x27;ADODB.Command&#x27;)</span><br><span class="line">cmd.acTiveConnection = conn</span><br><span class="line"># sql语句</span><br><span class="line">cmd.CommandText = &#x27;select * from [Sheet1$]&#x27;</span><br><span class="line"># 查询</span><br><span class="line">(rs, dummy) = cmd.Execute()</span><br><span class="line"># 获取信息</span><br><span class="line">query_result = rs.GetRows()</span><br><span class="line">result = zip(*query_result)</span><br><span class="line">for a in list(map(lambda v: list(v), result)):</span><br><span class="line">    print(a)</span><br></pre></td></tr></table></figure>
+<h1 id="五、执行结果"><a href="#五、执行结果" class="headerlink" title="五、执行结果"></a>五、执行结果</h1><p><img src="/../img/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.png"></p>
+</div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -226,7 +236,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2022/07/16/hexo-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4-%E5%A4%87%E5%BF%98/",
+                text: "http://example.com/2022/07/17/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -238,10 +248,11 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2022/07/16/hexo-%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4-%E5%A4%87%E5%BF%98/";
-            const title         = "「hexo 上传博客常用的几个命令(备忘)」";
-            const excerpt       = `本Blog使用hexo的技术，所以需要记录一下常用的几个指令记性不好，更要写下来
-1234567891011121314151617181920212223242526#新建文章hexo new &quot;blog_name&quo...`;
+            const hostUrl       = "http://example.com/2022/07/17/%E4%BD%BF%E7%94%A8Sql%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%93%8D%E4%BD%9CExcel-Python/";
+            const title         = "「使用Sql的方式，操作Excel(Python)」";
+            const excerpt       = `一、前言：在我们的认知里，Sql通常是用来操作数据库内容的。在此之前，我也是这么认为的，但是经过一位朋友的介绍，发现Sql还能对Excel进行操作。特此记录一下操作的方式
+二、配置环境：1. Python需要安装pywin32的包
+2...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -263,7 +274,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-07-16T10:43:48.299Z" itemprop="dateModified">最后编辑：2022-07-16</time>
+                    <time datetime="2022-07-28T13:41:43.132Z" itemprop="dateModified">最后编辑：2022-07-28</time>
                 </div>
             </div>
         </footer>
@@ -272,13 +283,9 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" PowerShell 因为在此系统上禁止运行脚本 解决办法" href="/2022/07/16/PowerShell-因为在此系统上禁止运行脚本-解决办法/">&lt; 上一篇</a>
+                <a title=" win11 修改右键菜单" href="/2022/07/16/win11-修改右键菜单/">&lt; 上一篇</a>
             </div>
             
-            
-            <div class="nav-next clearfix">
-                <a title=" win11 修改右键菜单" href="/2022/07/16/win11-修改右键菜单/">下一篇 &gt;</a>
-            </div>
             
         </nav>
     
